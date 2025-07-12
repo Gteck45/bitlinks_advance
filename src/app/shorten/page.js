@@ -68,7 +68,7 @@ const Page = () => {
                     onChange={e => { setShorturl(e.target.value) }} />
                 <button className='bg-purple-500 rounded-lg shadow-lg p-3 py-1 font-bold my-3 text-white' onClick={generate}>Generate</button>
             </div>
-            {generated && <> <span>Your Link:</span><code className='w-full overflow-hidden'><Link href={`http://${generated}`} target="_blank" >{generated}</Link></code>
+            {generated && <> <span>Your Link:</span><code className='w-full overflow-hidden'><Link href={generated} target="_blank" >{generated}</Link></code>
             </>
 
             }
