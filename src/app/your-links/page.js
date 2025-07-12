@@ -18,10 +18,10 @@ const Page = async () => {
     const email = session?.user?.email || "gteck4dd5@gmail.com";
 
     // Fetch user data server-side
-   
+
 
     const response = await axios.post(
-      `/api/links`,
+      `https://profileshorten.gteck45.cloud/api/links`,
       { email },
       {
         headers: {
@@ -29,15 +29,15 @@ const Page = async () => {
         }
       }
     );
-    
+
     // Get the result
     const data = response.data;
-    
+
 
     if (response.ok) {
       const userData = await response.json();
-    
-      
+
+
       // Handle different response formats
       if (Array.isArray(userData)) {
         usergeneratedlinks = userData;
@@ -61,11 +61,11 @@ const Page = async () => {
     <>
       <div className="absolute top-0 z-[-2] h-screen min-w-screen max-w-[200vh] bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#D5C6FF_1px)] bg-[size:20px_20px]"></div>
       <h1 className='mx-auto text-center font-bold font-stretch-75% text-2xl'>Your Generated Links</h1>
-      
+
       {error && (
         <div className="text-red-500 text-center mt-4">{error}</div>
       )}
-      
+
       <LinksClient initialLinks={usergeneratedlinks} />
     </>
   )

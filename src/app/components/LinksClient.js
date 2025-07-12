@@ -89,7 +89,7 @@ const LinksClient = ({ initialLinks }) => {
         >
           <div className='w-[40vh] overflow-hidden' title={item.url}>
             <a 
-              href={`/${item.shorturl}`} 
+              href={`https://profileshorten.gteck45.cloud/${item.shorturl}`} 
               target='_blank' 
               rel='noopener noreferrer'
               className="hover:underline"

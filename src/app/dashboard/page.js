@@ -18,10 +18,10 @@ export default async function Page() {
 
     try {
         const email = session?.user?.email || "welcome";
-        const url = `/api/user`;
+       
 
         // Axios POST request (correct syntax)
-        const response = await axios.post(url, { email });
+        const response = await axios.post(`https://profileshorten.gteck45.cloud/api/user`, { email });
 
         // Axios stores response data in `response.data`
         User = response.data?.doc || null;
@@ -34,7 +34,7 @@ export default async function Page() {
             <div className=""></div>
             <section className="min-h-screen py-4 px-4 sm:px-6 lg:px-8 absolute top-0 z-[-2]  min-w-screen max-w-[200vw] bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#D5C6FF_1px)] bg-[size:20px_20px]">
                 <main>
-                    <span className='text-[#F9F871] text-xl sm:text-2xl text-center fixed bottom-11 w-full underline underline-offset-4 hover:no-underline '> Public url: {`  ${process.env.NEXT_PUBLIC_HOST}/user/${User.username}`}</span>
+                    <span className='text-[#F9F871] text-xl sm:text-2xl text-center fixed bottom-11 w-full underline underline-offset-4 hover:no-underline '> Public url: {`  ${process.env.NEXT_PUBLIC_HOST}/user/${User?.username || 'User'}`}</span>
                     <div className="container mx-auto max-w-7xl ">
                         <div className='flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-8 mt-14'>
                             {/* Profile Card */}

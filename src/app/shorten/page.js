@@ -33,7 +33,7 @@ const Page = () => {
             redirect: "follow"
         };
 
-        fetch(`/api/generate`, requestOptions)
+        fetch(`https://profileshorten.gteck45.cloud/api/generate`, requestOptions)
             .then((response) => response.json())
             .then((result) => {
                 if (result.success === true) {
