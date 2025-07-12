@@ -21,7 +21,7 @@ const Page = async () => {
    
 
     const response = await axios.post(
-      `/api/links`,
+      `${process.env.NEXT_PUBLIC_HOST}/api/links`,
       { email },
       {
         headers: {

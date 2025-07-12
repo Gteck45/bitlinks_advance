@@ -39,7 +39,7 @@ const LinksClient = ({ initialLinks }) => {
     setIsDeleting(id);
 
     try {
-      const response = await axios.delete('/api/links', {
+      const response = await axios.delete(`${process.env.NEXT_PUBLIC_HOST}/api/links`, {
         data: { id },
         headers: {
           'Content-Type': 'application/json',

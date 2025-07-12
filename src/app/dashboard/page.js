@@ -18,7 +18,7 @@ export default async function Page() {
 
     try {
         const email = session?.user?.email || "welcome";
-        const url = `/api/user`;
+        const url = `${process.env.NEXT_PUBLIC_HOST}/api/user`;
 
         // Axios POST request (correct syntax)
         const response = await axios.post(url, { email });

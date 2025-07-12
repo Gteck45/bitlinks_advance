@@ -33,7 +33,7 @@ const Page = () => {
             redirect: "follow"
         };
 
-        fetch("/api/generate", requestOptions)
+        fetch(`${process.env.NEXT_PUBLIC_HOST}/api/generate`, requestOptions)
             .then((response) => response.json())
             .then((result) => {
                 if (result.success === true) {
