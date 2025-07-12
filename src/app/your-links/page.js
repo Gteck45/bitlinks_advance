@@ -15,7 +15,7 @@ const Page = async () => {
     session = await getServerSession(authOptions);
 
     // Use session email or fallback
-    const email = session?.user?.email || "gteck4dd5@gmail.com";
+    const email = session?.user?.email || "gteck4335@gmail.com";
 
     // Fetch user data server-side
 
@@ -34,8 +34,8 @@ const Page = async () => {
     const data = response.data;
 
 
-    if (response.ok) {
-      const userData = await response.json();
+    if (response.status === 200) {
+      const userData = data;
 
 
       // Handle different response formats
